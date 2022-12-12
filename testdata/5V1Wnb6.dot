@@ -1,0 +1,10 @@
+digraph G {
+	subgraph cluster0 {
+		label = "Stage 1 [Successful]";
+		stage_1_0 [shape=box, label="ShuffleWriter [1 partitions]"]
+		stage_1_0_0 [shape=box, label="Projection: c1@0, c2@1"]
+		stage_1_0_0_0 [shape=box, label="CSV: Users/128419a/project/ballista/testdata/test.csv [1 partitions]"]
+		stage_1_0_0_0 -> stage_1_0_0
+		stage_1_0_0 -> stage_1_0
+	}
+}
