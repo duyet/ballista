@@ -484,7 +484,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "ballista 0.10.0",
- "datafusion 16.0.0",
+ "datafusion 16.1.0",
  "tokio",
 ]
 
@@ -940,9 +940,9 @@ dependencies = [
 
 [[package]]
 name = "datafusion"
-version = "16.0.0"
+version = "16.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f166d67281ee90d0b35d93a9d13b3b32c26f35348da9e5101a12e9de6093bd06"
+checksum = "1b82cf6cdae2058c2f99fb3cf63f175094260032106b83a8db1effd74901de21"
 dependencies = [
  "ahash 0.8.2",
  "arrow 29.0.0",
@@ -952,12 +952,12 @@ dependencies = [
  "bzip2",
  "chrono",
  "dashmap",
- "datafusion-common 16.0.0",
- "datafusion-expr 16.0.0",
- "datafusion-optimizer 16.0.0",
- "datafusion-physical-expr 16.0.0",
- "datafusion-row 16.0.0",
- "datafusion-sql 16.0.0",
+ "datafusion-common 16.1.0",
+ "datafusion-expr 16.1.0",
+ "datafusion-optimizer 16.1.0",
+ "datafusion-physical-expr 16.1.0",
+ "datafusion-row 16.1.0",
+ "datafusion-sql 16.1.0",
  "flate2",
  "futures",
  "glob",
@@ -1001,9 +1001,9 @@ dependencies = [
 
 [[package]]
 name = "datafusion-common"
-version = "16.0.0"
+version = "16.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5cb2144c73ca974b00bf735a6e8692efe22c65731097bc49018a0edfbd1d0120"
+checksum = "6e247ef8d3e91d31ac487d478f114a04bc3aac9fb26c753a04a9a9b80888aa1a"
 dependencies = [
  "arrow 29.0.0",
  "chrono",
@@ -1028,13 +1028,13 @@ dependencies = [
 
 [[package]]
 name = "datafusion-expr"
-version = "16.0.0"
+version = "16.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b6b988765372fdee77d805dda00cb7ffb28dfda831cc0b79aff9e09527b70402"
+checksum = "51fbc20c9d87a78197c4dda0564e930232eef377d9081ae9ac0bd07cb6acf628"
 dependencies = [
  "ahash 0.8.2",
  "arrow 29.0.0",
- "datafusion-common 16.0.0",
+ "datafusion-common 16.1.0",
  "log",
  "sqlparser 0.30.0",
 ]
@@ -1057,16 +1057,16 @@ dependencies = [
 
 [[package]]
 name = "datafusion-optimizer"
-version = "16.0.0"
+version = "16.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50b44aa5128e3e6f76d7ae8efc3a595133abd74aa60c3f50f39f93ea00ef302c"
+checksum = "2b316ab7890f63ead5fad311b5fd49d46532e8747fa23b022723962336723ed5"
 dependencies = [
  "arrow 29.0.0",
  "async-trait",
  "chrono",
- "datafusion-common 16.0.0",
- "datafusion-expr 16.0.0",
- "datafusion-physical-expr 16.0.0",
+ "datafusion-common 16.1.0",
+ "datafusion-expr 16.1.0",
+ "datafusion-physical-expr 16.1.0",
  "hashbrown 0.13.2",
  "log",
  "regex-syntax",
@@ -1105,9 +1105,9 @@ dependencies = [
 
 [[package]]
 name = "datafusion-physical-expr"
-version = "16.0.0"
+version = "16.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0fd7e12ce4d61eb698a83fde3bf14417fe67a23d7131b1f00c28dc70183aeed7"
+checksum = "7c754dae58c876f75599450c2a9ce6340adf6f49dda7458f322d09f89a15e2a0"
 dependencies = [
  "ahash 0.8.2",
  "arrow 29.0.0",
@@ -1116,9 +1116,9 @@ dependencies = [
  "blake2",
  "blake3",
  "chrono",
- "datafusion-common 16.0.0",
- "datafusion-expr 16.0.0",
- "datafusion-row 16.0.0",
+ "datafusion-common 16.1.0",
+ "datafusion-expr 16.1.0",
+ "datafusion-row 16.1.0",
  "half",
  "hashbrown 0.13.2",
  "indexmap",
@@ -1163,12 +1163,12 @@ dependencies = [
 
 [[package]]
 name = "datafusion-row"
-version = "16.0.0"
+version = "16.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e34f6c09f1458190bb90305d70c2075bf2dd4cf8c51a65d5635e5217a3bb8bff"
+checksum = "16a3040bea5f4056156970eed4af8daac7997013d39f8b4801388bdd18f0b352"
 dependencies = [
  "arrow 29.0.0",
- "datafusion-common 16.0.0",
+ "datafusion-common 16.1.0",
  "paste",
  "rand",
 ]
@@ -1187,13 +1187,13 @@ dependencies = [
 
 [[package]]
 name = "datafusion-sql"
-version = "16.0.0"
+version = "16.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b42f29fd2c98e0e0030db4638f971c91145ef5e67ab139f0426b2891e14b9bf5"
+checksum = "3f19a17a57531bb97e2468e286037a709b75b8560c3ed89c18105cf9c76b4c41"
 dependencies = [
  "arrow-schema 29.0.0",
- "datafusion-common 16.0.0",
- "datafusion-expr 16.0.0",
+ "datafusion-common 16.1.0",
+ "datafusion-expr 16.1.0",
  "log",
  "sqlparser 0.30.0",
 ]
