@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.79"
 ballista = { version = "0.12" }
-datafusion = "26.0.0"
+datafusion = "35.0.0"
 tokio = { version = "1.36", features = ["full"] }
