@@ -9,4 +9,4 @@ edition = "2021"
 anyhow = "1.0.81"
 ballista = { version = "0.12" }
 datafusion = "35.0.0"
-tokio = { version = "1.36", features = ["full"] }
+tokio = { version = "1.37", features = ["full"] }
