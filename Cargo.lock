@@ -884,7 +884,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "ballista 48.0.0",
- "datafusion 49.0.0",
+ "datafusion 49.0.1",
  "tokio",
 ]
 
@@ -1558,9 +1558,9 @@ dependencies = [
 
 [[package]]
 name = "datafusion"
-version = "49.0.0"
+version = "49.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0f47772c28553d837e12cdcc0fb04c2a0fe8eca8b704a30f721d076f32407435"
+checksum = "f4539076347adb068dd1950f64c6437e946dd3449b8284c971bd05f025a2e648"
 dependencies = [
  "arrow",
  "arrow-ipc",
