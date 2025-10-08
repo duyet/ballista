@@ -1,15 +1,11 @@
-use ballista::prelude::*;
-use datafusion::prelude::{col, lit, CsvReadOptions, ParquetReadOptions};
+use datafusion::prelude::{col, lit, CsvReadOptions, ParquetReadOptions, SessionContext};
 
 #[tokio::main]
-async fn main() -> Result<()> {
-    // create configuration
-    let config = BallistaConfig::builder()
-        .set("ballista.shuffle.service", "true")
-        .build()?;
-
+async fn main() -> datafusion::common::Result<()> {
     // connect to Ballista scheduler
-    let ctx = BallistaContext::remote("localhost", 50050, &config).await?;
+    let ctx =
+        <SessionContext as ballista::prelude::SessionContextExt>::remote("df://localhost:50050")
+            .await?;
 
     let csv_file = "testdata/test.csv";
     process_csv(&ctx, csv_file).await?;
@@ -20,7 +16,7 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
-async fn process_csv(ctx: &BallistaContext, csv_file: &str) -> Result<()> {
+async fn process_csv(ctx: &SessionContext, csv_file: &str) -> datafusion::common::Result<()> {
     // define the query using the DataFrame trait
     let df = ctx
         .read_csv(csv_file, CsvReadOptions::new())
@@ -32,7 +28,10 @@ async fn process_csv(ctx: &BallistaContext, csv_file: &str) -> Result<()> {
     Ok(())
 }
 
-async fn process_parquet(ctx: &BallistaContext, parquet_file: &str) -> Result<()> {
+async fn process_parquet(
+    ctx: &SessionContext,
+    parquet_file: &str,
+) -> datafusion::common::Result<()> {
     // define the query using the DataFrame trait
     let df = ctx
         .read_parquet(parquet_file, ParquetReadOptions::default())
@@ -44,4 +43,3 @@ async fn process_parquet(ctx: &BallistaContext, parquet_file: &str) -> Result<()
 
     Ok(())
 }
-
