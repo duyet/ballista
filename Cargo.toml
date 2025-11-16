@@ -2,11 +2,26 @@
 name = "ballista"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["Ballista Contributors"]
+description = "A distributed query execution client built on Apache Arrow Ballista"
+license = "MIT"
+repository = "https://github.com/duyet/ballista"
+readme = "README.md"
 
 [dependencies]
-anyhow = "1.0.100"
+# Core dependencies
+anyhow = { version = "1.0.100", features = ["backtrace"] }
 ballista = { version = "49.0" }
-datafusion = "48.0"
+datafusion = "49.0"
 tokio = { version = "1.47", features = ["full"] }
+
+# CLI and configuration
+clap = { version = "4.5", features = ["derive", "env"] }
+
+# Logging and observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+# Testing
+tempfile = "3.15"
