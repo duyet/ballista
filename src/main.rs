@@ -22,11 +22,7 @@ struct Args {
     csv_file: PathBuf,
 
     /// Parquet file path to query
-    #[arg(
-        long,
-        env = "PARQUET_FILE",
-        default_value = "testdata/test.parquet"
-    )]
+    #[arg(long, env = "PARQUET_FILE", default_value = "testdata/test.parquet")]
     parquet_file: PathBuf,
 
     /// Skip CSV processing
@@ -172,8 +168,7 @@ mod tests {
 
     #[test]
     fn test_args_custom_scheduler() {
-        let args =
-            Args::parse_from(["ballista", "--scheduler", "df://custom-host:9999"]);
+        let args = Args::parse_from(["ballista", "--scheduler", "df://custom-host:9999"]);
         assert_eq!(args.scheduler, "df://custom-host:9999");
     }
 
