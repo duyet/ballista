@@ -3,5 +3,20 @@
   "extends": [
     "config:base"
   ],
-  "automerge": true
+  "automerge": false,
+  "packageRules": [
+    {
+      "description": "Group Ballista and DataFusion updates together - versions must stay in sync",
+      "matchPackagePatterns": ["^ballista$", "^datafusion$"],
+      "groupName": "Ballista stack",
+      "automerge": false
+    },
+    {
+      "description": "Auto-merge minor and patch updates for stable dependencies",
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackagePatterns": ["^tokio$", "^anyhow$"],
+      "automerge": true,
+      "automergeType": "pr"
+    }
+  ]
 }
