@@ -11,8 +11,8 @@ readme = "README.md"
 [dependencies]
 # Core dependencies
 anyhow = { version = "1.0.100", features = ["backtrace"] }
-ballista = { version = "49.0" }
-datafusion = "49.0"
+ballista = { version = "52.0" }
+datafusion = "53.0"
 tokio = { version = "1.47", features = ["full"] }
 
 # CLI and configuration
